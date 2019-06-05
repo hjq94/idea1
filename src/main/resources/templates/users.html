@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">   <!--//类似于命名空间 namespace-->
+<head>
+    <meta charset="UTF-8">
+    <title>t</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>id</td>
+        <td>用户名</td>
+        <td>密码</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+        <td>出生日期</td>
+        <td>备注</td>
+        <td>创造时间</td>
+        <td>更新时间</td>
+    </tr>
+
+    <tr th:each="o:${users}">
+        <td th:text="${o.id}">id</td>
+        <td th:text="${o.userName}">用户名</td>
+        <td th:text="${o.password}">密码</td>
+        <td th:text="${o.name}">姓名</td>
+        <td th:text="${o.age}">年龄</td>
+        <td th:text="${o.sex }==1?'男':'女'">性别</td>
+        <td th:text="${#dates.format(o.birthday,'yyyy-mm-dd')}">出生日期</td>
+        <td th:text="${o.note}">备注</td>
+        <td th:text="${#dates.format(o.created,'yyyy-mm-dd')}">创造时间</td>
+        <td th:text="${#dates.format(o.updated,'yyyy-mm-dd')}">更新时间</td>
+
+
+
+    </tr>
+
+
+
+
+
+</table>
+
+
+
+</body>
+</html>
